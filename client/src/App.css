@@ -58,3 +58,15 @@
   width: '30px';
   margin:'auto'
 }
+
+#text_explicative {
+  border: solid chocolate;
+  width: 50%;
+  margin: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  background-color: #F2CDA0;
+  display: grid;
+  grid-template-columns: 100%;
+}
