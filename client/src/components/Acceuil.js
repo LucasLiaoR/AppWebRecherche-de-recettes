@@ -6,7 +6,9 @@ const Acceuil = () => {
 
     return (
         <div style={{marginTop:'0px'}}>
-            <img src={homeImageOne} className="homeImageOne" alt=""/>
+            <div>
+                <img src={homeImageOne} className="homeImageOne" alt=""/>
+            </div>
             <p>Lorem Ipsum</p>
             <p>Lorem Ipsum</p>
             <p>Lorem Ipsum</p>

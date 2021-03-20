@@ -6,6 +6,7 @@ import Acceuil from './components/Acceuil';
 import ListeRecettes from './components/ListeRecettes';
 import RechercheRecettes from './components/RechercheRecettes';
 import ErrorPage from './components/ErrorPage';
+import New from './components/New';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/" component={Acceuil} />
         <Route path="/recettes" component={ListeRecettes} />
         <Route path="/rechercherecettes" component={RechercheRecettes} />
+        <Route path="/new" component={New} />
         <Route component={ErrorPage} />
  
         </Switch>
