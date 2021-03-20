@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import '../App.css';
-import imgRecette1 from '../resources/r1.png'
 
 
 //Importer en dynamique les images d'un folder
@@ -24,7 +23,7 @@ class RechercheRecette extends Component {
        this.getRecipes();
     }
 
-    getRecipes = _ => {
+    getRecipes = () => {
         fetch(`http://localhost:4000/recipes`)
         .then(response => response.json())
         .then(response => this.setState({ recipes: response.data}))
@@ -39,11 +38,11 @@ class RechercheRecette extends Component {
 
     renderRecipes2 = ({id_recette, libelle_recette, difficulte, temps_prep, nom_fichier_image}) => (
         <div className="card" style={{width: '18rem', margin:'20px'}}>
-            <img src={`/static/images/${nom_fichier_image}`} style={{height:'200px'}} className="card-img-top" alt="..." />
+            <Link to='/recettes'><img src={`/static/images/${nom_fichier_image}`} style={{height:'200px'}} className="card-img-top" alt="..." /></Link>
             <div className="card-body">
                 <h5 className="card-title">{libelle_recette}</h5>
                 <p className="card-text">Difficulté : {difficulte} - Temps : {temps_prep} min</p>
-                
+            
             </div>
         </div>
     )
@@ -53,10 +52,16 @@ class RechercheRecette extends Component {
     render(){
         const {recipes} = this.state;
         return (
+            <div style={{marginTop: '20px'}}>
+                <h1>Toutes nos recettes</h1>
+                <div className='sectionResultat'>
+                    {recipes.map(this.renderRecipes2)}
+                </div>
 
-            <div className='sectionResultat'>
-                {recipes.map(this.renderRecipes2)}
+
             </div>
+
+            
         )
     }
 
