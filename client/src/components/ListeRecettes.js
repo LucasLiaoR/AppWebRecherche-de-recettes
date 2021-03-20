@@ -37,9 +37,9 @@ class RechercheRecette extends Component {
         </div>
     )
 
-    renderRecipes2 = ({id_recette, libelle_recette, difficulte, temps_prep}) => (
+    renderRecipes2 = ({id_recette, libelle_recette, difficulte, temps_prep, nom_fichier_image}) => (
         <div className="card" style={{width: '18rem', margin:'20px'}}>
-            <img src={imgRecette1} className="card-img-top" alt="..." />
+            <img src={`/static/images/${nom_fichier_image}`} style={{height:'200px'}} className="card-img-top" alt="..." />
             <div className="card-body">
                 <h5 className="card-title">{libelle_recette}</h5>
                 <p className="card-text">Difficulté : {difficulte} - Temps : {temps_prep} min</p>
