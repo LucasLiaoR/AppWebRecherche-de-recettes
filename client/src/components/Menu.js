@@ -23,7 +23,7 @@ const Menu = () => {
                         <NavLink className="nav-link" to="/recettes">Toutes nos recettes</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="/connexion">Connexion</NavLink>
+                        <NavLink className="nav-link" to="/login">Connexion</NavLink>
                     </li>
                     <li className="nav-item">
                         <NavLink className="nav-link" to="/creationcompte">Créer un compte</NavLink>

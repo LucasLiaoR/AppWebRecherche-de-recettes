@@ -75,6 +75,22 @@ app.get('/ingredients_supp', (req,res) => {
 
 });
 
+app.post('/login', (req,res) => {
+    let username = 'Lucas';
+    let password = 'hunter';
+    database.query('SELECT * FROM utilisateurs WHERE nom_compte = ? AND mdp = ?', [username, password], (err, results) => {
+        if (err){
+            return res.send(err)
+        }
+        else{
+            return res.json({
+                data : results
+            })
+        }
+    });
+
+});
+
 app.get('/detail-recette/:id', (req,res) => {
     database.query(`SELECT * FROM recettes_bis WHERE id_recette = ` + req.params.id, (err, results) => {
         if (err){
