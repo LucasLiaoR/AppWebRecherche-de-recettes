@@ -85,8 +85,6 @@ class RechercheRecette extends Component {
         //destructuration de la state
         const {proteines, ingredients_supp} = this.state;
 
-        console.log(this.state.proteines)
-
         return (
             <div style={{marginTop: '20px'}}>
                 <h3>Comment fonctionne notre outil de recherche ?</h3>

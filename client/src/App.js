@@ -8,6 +8,7 @@ import RechercheRecettes from './components/RechercheRecettes';
 import ResultatRecherche from './components/ResultatRecherche';
 import ErrorPage from './components/ErrorPage';
 import New from './components/New';
+import DetailRecette from './components/DetailRecette';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/recettes" component={ListeRecettes} />
         <Route path="/recherche-recettes" component={RechercheRecettes} />
         <Route path="/resultat-recherche" component={ResultatRecherche} />
+        <Route path="/detail-recette/:id" component={DetailRecette} />
         <Route path="/new" component={New} />
         <Route component={ErrorPage} />
  

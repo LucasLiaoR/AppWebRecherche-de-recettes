@@ -75,6 +75,20 @@ app.get('/ingredients_supp', (req,res) => {
 
 });
 
+app.get('/detail-recette/:id', (req,res) => {
+    database.query(`SELECT * FROM recettes_bis WHERE id_recette = ` + req.params.id, (err, results) => {
+        if (err){
+            return res.send(err)
+        }
+        else{
+            return res.json({
+                data : results
+            })
+        }
+    });
+
+});
+
 
 
 
