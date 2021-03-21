@@ -54,12 +54,8 @@ class RechercheRecette extends Component {
     )
 
     handleResearch = () => {
-        this.props.history.push('/new', {test: this.state.ingredientSuppList, test2: this.state.ingredientSuppCount, test3: this.state.proteineSelected});
+        this.props.history.push('/resultat-recherche', {ingrSuppList: this.state.ingredientSuppList, ingrSuppCount: this.state.ingredientSuppCount, proteineSelected: this.state.proteineSelected});
     }
-
-    // handleResearch2 = () => {
-    //     this.props.history.push('/new', {test: this.state.ingredientSelectionnes, test2: document.getElementById('proteine').value });
-    // }
     
     handleProteine = e => {
         this.setState({
@@ -89,6 +85,7 @@ class RechercheRecette extends Component {
         //destructuration de la state
         const {proteines, ingredients_supp} = this.state;
 
+        console.log(this.state.proteines)
 
         return (
             <div style={{marginTop: '20px'}}>

@@ -5,6 +5,7 @@ import Menu from './components/Menu';
 import Acceuil from './components/Acceuil';
 import ListeRecettes from './components/ListeRecettes';
 import RechercheRecettes from './components/RechercheRecettes';
+import ResultatRecherche from './components/ResultatRecherche';
 import ErrorPage from './components/ErrorPage';
 import New from './components/New';
 
@@ -17,7 +18,8 @@ function App() {
         <Switch>
         <Route exact path="/" component={Acceuil} />
         <Route path="/recettes" component={ListeRecettes} />
-        <Route path="/rechercherecettes" component={RechercheRecettes} />
+        <Route path="/recherche-recettes" component={RechercheRecettes} />
+        <Route path="/resultat-recherche" component={ResultatRecherche} />
         <Route path="/new" component={New} />
         <Route component={ErrorPage} />
  

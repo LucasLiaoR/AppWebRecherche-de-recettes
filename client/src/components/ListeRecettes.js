@@ -30,13 +30,7 @@ class RechercheRecette extends Component {
         .catch(err => console.err(err))
     }
 
-    renderRecipes = ({id_recette, libelle_recette}) => (
-        <div>
-            <div key={id_recette}>{libelle_recette}</div>
-        </div>
-    )
-
-    renderRecipes2 = ({id_recette, libelle_recette, difficulte, temps_prep, nom_fichier_image}) => (
+    renderRecipes = ({id_recette, libelle_recette, difficulte, temps_prep, nom_fichier_image}) => (
         <div className="card" style={{width: '18rem', margin:'20px'}}>
             <Link to='/recettes'><img src={`/static/images/${nom_fichier_image}`} style={{height:'200px'}} className="card-img-top" alt="..." /></Link>
             <div className="card-body">
@@ -55,7 +49,7 @@ class RechercheRecette extends Component {
             <div style={{marginTop: '20px'}}>
                 <h1>Toutes nos recettes</h1>
                 <div className='sectionResultat'>
-                    {recipes.map(this.renderRecipes2)}
+                    {recipes.map(this.renderRecipes)}
                 </div>
 
 
