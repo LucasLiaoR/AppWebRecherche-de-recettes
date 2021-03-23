@@ -12,6 +12,7 @@ import DetailRecette from './components/DetailRecette';
 import Login from './components/Login';
 import Inscription from './components/Inscription';
 import AuthContextProvider from './components/Contexts/AuthContext'
+import PageProfil from './components/PageProfil'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/detail-recette/:id" component={DetailRecette} />
           <Route path="/login" component={Login} />
           <Route path="/inscription" component={Inscription} />
+          <Route path="/profil" component={PageProfil} />
           <Route path="/new" component={New} />
           <Route component={ErrorPage} />
   

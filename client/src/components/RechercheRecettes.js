@@ -16,8 +16,6 @@ class RechercheRecette extends Component {
 
         ingredientSuppList: [],
 
-        ingredientSuppCount: 0,
-
         ValidSearch: true,
     };
 
@@ -55,7 +53,7 @@ class RechercheRecette extends Component {
 
     //Redirection vers la page de résultat de la recherche
     handleResearch = () => {
-        this.props.history.push('/resultat-recherche', {ingrSuppList: this.state.ingredientSuppList, ingrSuppCount: this.state.ingredientSuppCount, proteineSelected: this.state.proteineSelected});
+        this.props.history.push('/resultat-recherche', {ingrSuppList: this.state.ingredientSuppList, proteineSelected: this.state.proteineSelected});
     }
 
     // Activation du bouton de recherche si au moins 1 protéine et 2 ingrédients supp ont été sélectionnés
@@ -74,13 +72,13 @@ class RechercheRecette extends Component {
             proteineSelected: e.target.value
         })
        
-        
+        // Activer le bouton de recherche
         this.activateSearchButton();
     }
 
     
 
-
+    // Vérifier si l'ingrédient séléctionné est déjà séléctionné dans un autre des choix, si non, rajout de cet ingrédient dans la state
     handleIngredientSupp = e => {
 
         if (e.target.value !== '' && !this.state.ingredientSuppList.includes(e.target.value))
@@ -95,6 +93,7 @@ class RechercheRecette extends Component {
             
         }
         
+        // Activer le bouton de recherche
         this.activateSearchButton();
     }
         

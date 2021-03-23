@@ -1,19 +1,24 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { AuthContext } from './Contexts/AuthContext';
 
-class PageProfil extends React.Component {
+const PageProfil = (props) => {
 
-    render () {
-        return (
-            <div>
-                Page de Profil User
-            </div>
-        )
+    const authData = useContext(AuthContext)
+
+    // redirection vers la page de connexion si aucun utilisateur n'est connecté
+    if (!authData.isAuth)
+    {
+        props.history.push('/login');
     }
+
+    return (
+        <div>
+          {authData.email}
+        </div>
+    )
+
 
 
 }
-
-
-
 
 export default PageProfil;

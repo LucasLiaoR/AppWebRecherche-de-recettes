@@ -6,7 +6,7 @@ import { FirebaseContext } from './Firebase'
 
 
 
-const Login = () => {
+const Login = (props) => {
 
     const firebase = useContext(FirebaseContext);
     const authData = useContext(AuthContext);
@@ -32,7 +32,7 @@ const Login = () => {
             setLoginData({...data});
             authData.toggleAuth();
             authData.stockEmail(email);
-            console.log(user)
+            props.history.push('/profil');
         })
         .catch(error => {
             setError(error);

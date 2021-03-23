@@ -71,7 +71,7 @@ const Menu = () => {
                             <NavLink className="nav-link" to="/profil">Page de profil</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/" onClick={logout}>Deconnexion</Link>
+                            <NavLink className="nav-link" to="/login" onClick={logout}>Deconnexion</NavLink>
                         </li>
                         
 
