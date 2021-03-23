@@ -1,7 +1,6 @@
 
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { observer } from 'mobx-react'
 import Menu from './components/Menu';
 import Acceuil from './components/Acceuil';
 import ListeRecettes from './components/ListeRecettes';
@@ -35,4 +34,4 @@ function App() {
   );
 }
 
-export default observer(App);
+export default App;

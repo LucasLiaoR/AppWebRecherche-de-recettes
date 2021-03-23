@@ -1,7 +1,6 @@
 import React from 'react'
 import '../App.css'
-import { observer } from 'mobx-react'
-import UserStore from './Stores/UserStore'
+
 
 
 
@@ -93,4 +92,4 @@ class Login extends React.Component {
 
 }
 
-export default observer(Login);
+export default Login;
