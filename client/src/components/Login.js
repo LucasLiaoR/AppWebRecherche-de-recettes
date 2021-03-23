@@ -25,53 +25,6 @@ class Login extends React.Component {
         
     }
 
-    
-
-    // login = async() => {
-    //     if (!this.state.username)
-    //     {
-    //         return;
-    //     }
-    //     if (!this.state.password)
-    //     {
-    //         return;
-    //     }
-
-    //     this.setState({
-    //         buttonDisabled: true
-    //     })
-
-    //     try {
-    //         let res = await fetch(`http://localhost:4000/login`, {
-    //             method:'get',
-    //             body: JSON.stringify({
-    //                 username: this.state.username,
-    //                 password: this.state.password,
-    //             })
-    //         });
-
-    //         let result = await res.json();
-    //         if (result && result.success)
-    //         {
-    //             UserStore.isLoggedIn = true;
-    //             UserStore.username = result.username;
-    //         }
-    //         else if (result && result.success === false){
-    //             this.setState({
-    //                 username: '',
-    //                 password: '',
-    //                 buttonDisabled: false
-                    
-    //             })
-    //             alert(result.msg);
-    //         }
-    //     }
-    //     catch (e) {
-    //         console.log(e)
-    //     }
-        
-    // }
-
     render () {
         return (
             <div className="wrapper fadeInDown">
