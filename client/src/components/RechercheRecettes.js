@@ -53,16 +53,13 @@ class RechercheRecette extends Component {
         <option key={id_ingredient_supp} value={`${libelle_ingredient_supp}`}>{libelle_ingredient_supp}</option>
     )
 
+    //Redirection vers la page de résultat de la recherche
     handleResearch = () => {
         this.props.history.push('/resultat-recherche', {ingrSuppList: this.state.ingredientSuppList, ingrSuppCount: this.state.ingredientSuppCount, proteineSelected: this.state.proteineSelected});
     }
-    
-    handleProteine = e => {
-        this.setState({
-            proteineSelected: e.target.value
-        })
-       
 
+    // Activation du bouton de recherche si au moins 1 protéine et 2 ingrédients supp ont été sélectionnés
+    activateSearchButton() {
         if (this.state.proteineSelected !== '' && this.state.ingredientSuppList.length > 1)
         {
             this.setState({
@@ -70,6 +67,18 @@ class RechercheRecette extends Component {
             })
         }
     }
+    
+    //Stockage de la protéine électionnée dans la state pour la recherche
+    handleProteine = e => {
+        this.setState({
+            proteineSelected: e.target.value
+        })
+       
+        
+        this.activateSearchButton();
+    }
+
+    
 
 
     handleIngredientSupp = e => {
@@ -86,15 +95,7 @@ class RechercheRecette extends Component {
             
         }
         
-        console.log(this.state.ingredientSuppList.length)
-
-        if (this.state.ingredientSuppList.length > 1 && this.state.proteineSelected !== '')
-        {
-            console.log(this.state.ingredientSuppList.length)
-            this.setState({
-                ValidSearch: false
-            })
-        }
+        this.activateSearchButton();
     }
         
     render(){

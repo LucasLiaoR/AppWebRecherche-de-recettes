@@ -26,9 +26,7 @@ class Firebase {
 
 
     //deconnexion
-    signoutUser = () => {
-        this.auth.signOut();
-    }
+    signoutUser = () => this.auth.signOut();
 }
 
 export default Firebase;

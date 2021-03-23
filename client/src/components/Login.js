@@ -1,49 +1,69 @@
-import React from 'react'
+import React, {useState, useContext} from 'react'
 import '../App.css'
-import { AuthContext } from './Contexts/AuthContext'
+import { AuthContext } from './Contexts/AuthContext';
+import { FirebaseContext } from './Firebase'
 
 
 
 
-class Login extends React.Component {
+const Login = () => {
 
-    static contextType = AuthContext
+    const firebase = useContext(FirebaseContext);
+    const authData = useContext(AuthContext);
 
-    state = {
-        username: '',
+    const data = {
+        email: '',
         password: '',
-        isAuth: false,
-        buttonDisabled: false,
-        user: []
     }
 
-    handleChange = e => {
-        this.setState({
-            [e.target.id]:e.target.value
+
+    const [loginData, setLoginData] = useState(data);
+    const [error, setError] = useState('');
+
+    const handleChange = (e) => {
+        setLoginData({...loginData, [e.target.id]: e.target.value});
+    }
+
+    const handleLogin = e => {
+        e.preventDefault();
+        const { email, password } = loginData;
+        firebase.signinUser(email, password)
+        .then(user => {
+            setLoginData({...data});
+            authData.toggleAuth();
+            authData.stockEmail(email);
+            console.log(user)
+        })
+        .catch(error => {
+            setError(error);
+            setLoginData({...data})
         })
     }
 
-    login = () => {
-        
-    }
+    const {email, password} = loginData;
 
-    
 
-    render () {
-        //const {isAuth, username, email, stockUsername, stockEmail} = this.context
+    const loginButn = email === '' || password === '' ? <button onClick={handleLogin} disabled>Se connecter</button> : <button onClick={handleLogin}>Se connecter</button>
 
-        return (
+    //gestion erreur
+    const errorMsg = error !== '' && <span>{error.message}</span>;
+
+    return (
+        <form onSubmit={handleLogin}>
             <div>
-                <div>
-                    <input type="text" id="username" className="fadeIn second" placeholder="login" onChange={this.handleChange} />
-                    <input type="text" id="password" className="fadeIn third" placeholder="password" onChange={this.handleChange} />
-                    <button onClick={this.login} disabled={this.state.buttonDisabled}>Log in</button>
-
-
-                </div>
+                {errorMsg}
             </div>
-        )
-    }
+
+            <div>
+                <input type="text" id="email" value={email} placeholder="Email" onChange={handleChange} required/>
+            </div>
+            <div>
+                <input type="password" id="password" value={password} placeholder="Mot de passe" onChange={handleChange} required />
+            </div>
+            {loginButn}
+        </form>
+    )
+
 
 
 }

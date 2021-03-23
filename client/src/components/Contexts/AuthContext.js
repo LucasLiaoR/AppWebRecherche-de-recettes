@@ -6,8 +6,8 @@ export const AuthContext = createContext();
 class AuthContextProvider extends Component {
     state = {
         isAuth: false,
-        username: 'test',
-        email: 'test'
+        username: '',
+        email: ''
     }
 
     toggleAuth = () => {
@@ -16,21 +16,29 @@ class AuthContextProvider extends Component {
         })
     }
 
-    stockUsername = (username) => {
+    stockUsername = (usernameNew) => {
         this.setState({
-            username: username
+            username: usernameNew
         })
     }
 
-    stockEmail= (email) => {
+    stockEmail = (emailNew) => {
         this.setState({
-            email: email
+            email: emailNew
+        })
+    }
+
+    resetOnLogout = () => {
+        this.setState({
+            isAuth: false,
+            username: '',
+            email: ''
         })
     }
 
     render() {
         return (
-            <AuthContext.Provider value={{...this.state, toggleAuth: this.toggleAuth, stockUsername: this.stockUsername, stockEmail: this.stockEmail}}>
+            <AuthContext.Provider value={{...this.state, toggleAuth: this.toggleAuth, stockUsername: this.stockUsername, stockEmail: this.stockEmail, resetOnLogout: this.resetOnLogout}}>
                 {this.props.children}
             </AuthContext.Provider>
         )
