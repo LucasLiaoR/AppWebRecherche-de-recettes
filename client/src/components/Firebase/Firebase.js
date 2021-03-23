@@ -17,14 +17,12 @@ class Firebase {
     }
 
     //inscription
-    signupUser = (email, password) => {
-        this.auth.createUserWithEmailAndPassword(email, password);
-    }
+    signupUser = (email, password) => this.auth.createUserWithEmailAndPassword(email, password);
+    
 
     //connexion
-    signinUser = (email, password) => {
-        this.auth.signInWithEmailAndPassword(email, password);
-    }
+    signinUser = (email, password) => this.auth.signInWithEmailAndPassword(email, password);
+    
 
 
     //deconnexion
