@@ -10,6 +10,7 @@ import ErrorPage from './components/ErrorPage';
 import New from './components/New';
 import DetailRecette from './components/DetailRecette';
 import Login from './components/Login';
+import Inscription from './components/Inscription';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/resultat-recherche" component={ResultatRecherche} />
         <Route path="/detail-recette/:id" component={DetailRecette} />
         <Route path="/login" component={Login} />
+        <Route path="/inscription" component={Inscription} />
         <Route path="/new" component={New} />
         <Route component={ErrorPage} />
  

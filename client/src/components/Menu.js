@@ -26,7 +26,7 @@ const Menu = () => {
                         <NavLink className="nav-link" to="/login">Connexion</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="/creationcompte">Créer un compte</NavLink>
+                        <NavLink className="nav-link" to="/inscription">Créer un compte</NavLink>
                     </li>
                 </ul>
                 </div>
