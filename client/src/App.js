@@ -11,25 +11,29 @@ import New from './components/New';
 import DetailRecette from './components/DetailRecette';
 import Login from './components/Login';
 import Inscription from './components/Inscription';
+import AuthContextProvider from './components/Contexts/AuthContext'
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Menu />
+        <AuthContextProvider>
 
-        <Switch>
-        <Route exact path="/" component={Acceuil} />
-        <Route path="/recettes" component={ListeRecettes} />
-        <Route path="/recherche-recettes" component={RechercheRecettes} />
-        <Route path="/resultat-recherche" component={ResultatRecherche} />
-        <Route path="/detail-recette/:id" component={DetailRecette} />
-        <Route path="/login" component={Login} />
-        <Route path="/inscription" component={Inscription} />
-        <Route path="/new" component={New} />
-        <Route component={ErrorPage} />
- 
-        </Switch>
+          <Menu />
+
+          <Switch>
+          <Route exact path="/" component={Acceuil} />
+          <Route path="/recettes" component={ListeRecettes} />
+          <Route path="/recherche-recettes" component={RechercheRecettes} />
+          <Route path="/resultat-recherche" component={ResultatRecherche} />
+          <Route path="/detail-recette/:id" component={DetailRecette} />
+          <Route path="/login" component={Login} />
+          <Route path="/inscription" component={Inscription} />
+          <Route path="/new" component={New} />
+          <Route component={ErrorPage} />
+  
+          </Switch>
+        </AuthContextProvider>
       </div>
     </BrowserRouter>
 

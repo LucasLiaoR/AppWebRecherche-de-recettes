@@ -18,7 +18,7 @@ class RechercheRecette extends Component {
 
         ingredientSuppCount: 0,
 
-        ValidSearch: false
+        ValidSearch: true,
     };
 
     //Récupérer les données de la bdd si le component est bien invoqué
@@ -63,19 +63,36 @@ class RechercheRecette extends Component {
         })
        
 
-        console.log(this.state.proteineSelected);
+        if (this.state.proteineSelected !== '' && this.state.ingredientSuppList.length > 1)
+        {
+            this.setState({
+                ValidSearch: false
+            })
+        }
     }
 
 
     handleIngredientSupp = e => {
+
         if (e.target.value !== '' && !this.state.ingredientSuppList.includes(e.target.value))
         {
+            
             var newIngredientSuppList = this.state.ingredientSuppList;
             newIngredientSuppList.push(e.target.value);
-            var newIngredientSuppCount = this.state.ingredientSuppList.length;
             this.setState({
                 ingredientSuppList: newIngredientSuppList,
-                ingredientSuppCount: newIngredientSuppCount
+            })
+
+            
+        }
+        
+        console.log(this.state.ingredientSuppList.length)
+
+        if (this.state.ingredientSuppList.length > 1 && this.state.proteineSelected !== '')
+        {
+            console.log(this.state.ingredientSuppList.length)
+            this.setState({
+                ValidSearch: false
             })
         }
     }
