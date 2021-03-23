@@ -5,29 +5,11 @@ import '../App.css'
 const Acceuil = () => {
 
     return (
-        <div style={{marginTop:'0px'}}>
+        <div style={{marginTop:'30px'}}>
             <div>
                 <img src={homeImageOne} className="homeImageOne" alt=""/>
             </div>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
-            <p>Lorem Ipsum</p>
+
 
 
         </div>
