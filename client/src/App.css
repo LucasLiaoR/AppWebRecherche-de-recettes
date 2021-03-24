@@ -81,6 +81,12 @@
   text-align-last: center;
 }
 
+.description {
+  width: 80%;
+  margin: auto;
+  text-align: left;
+}
+
 #section_recherche button{
   margin-top: 30px;
   background-color: #E78202;
@@ -251,3 +257,6 @@ h2.active {
 
 
 
+#container {
+  background-color: #fffcf5;
+}
